@@ -85,7 +85,7 @@ const Signup = ({ navigation }) => {
           }}
         >
           <TextInput
-            placeholder="+91"
+            placeholder="+58"
             placeholderTextColor={COLORS.black}
             keyboardType="numeric"
             style={{
