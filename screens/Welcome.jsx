@@ -1,8 +1,14 @@
+/**
+ * Un componente de bienvenida para la aplicación.
+ *
+ * Uso:
+ * <Welcome navigation={navigation} />
+ */
 import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import COLORS from "./constants/colors";
-import Berto from "./components/Button";
+import Berto from "../components/Button";
 const Welcome = ({ navigation }) => {
   return (
     <LinearGradient
@@ -96,16 +102,17 @@ const Welcome = ({ navigation }) => {
               color: COLORS.white,
             }}
           >
-            Let's Get
+           Bienvenido
           </Text>
           <Text
             style={{
               fontSize: 40,
               fontWeight: 800,
               color: COLORS.white,
+              marginLeft: 30
             }}
           >
-            Started
+            empecemos
           </Text>
 
           <View style={{ paddingVertical: 15, paddingHorizontal: 5 }}>
@@ -116,7 +123,7 @@ const Welcome = ({ navigation }) => {
                 marginVertical: 15,
               }}
             >
-              Better version of you awaits.
+             Una mejor version de tí te espera
             </Text>
             <Text
               style={{
@@ -125,34 +132,45 @@ const Welcome = ({ navigation }) => {
                 marginVertical: -15,
               }}
             >
-              Embrace, enjoy a healthier lifestyle with seamless habit tracking.</Text>
+              Adopta y disfruta de un estilo de vida más saludable con un seguimiento perfecto de tus hábitos.
+            </Text>
           </View>
           <Berto
-            title="Join now "
+            title="Únete ahora "
             onPress={() => navigation.navigate("Signup")}
             style={{
               marginTop: 22,
-              width: "100%"
+              width: "100%",
             }}
           />
-          <View style={{
-            flexDirection: "row",
-            marginTop: 80,
-            justifyContent: "center"
-          }}>
-            <Text style={{
-              fontSize: 16,
-            color: COLORS.white}} > Already have an account ?</Text>
-            <Pressable
-              onPress={() => navigation.navigate("Login")}>
-              <Text style={{
+          <View
+            style={{
+              flexDirection: "row",
+              marginTop: 80,
+              justifyContent: "center",
+            }}
+          >
+            <Text
+              style={{
                 fontSize: 16,
                 color: COLORS.white,
-                fontWeight: "bold",
-                marginLeft: 4
-              }}>Login</Text>
-               
-</Pressable>
+              }}
+            >
+              {" "}
+             ¿Ya tienes una cuenta?
+            </Text>
+            <Pressable onPress={() => navigation.navigate("Login")}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: COLORS.white,
+                  fontWeight: "bold",
+                  marginLeft: 4,
+                }}
+              >
+               Iniciar sesión
+              </Text>
+            </Pressable>
           </View>
         </View>
       </View>

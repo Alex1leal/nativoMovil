@@ -1,3 +1,11 @@
+/**
+ * Un componente de registro para la aplicación.
+ *
+ * Uso:
+ *
+ * <Signup navigation={navigation} />
+ */
+
 import {
   View,
   Text,
@@ -11,7 +19,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import COLORS from "./constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 import Checkbox from "expo-checkbox";
-import Button from "./components/Button";
+import Button from "../components/Button";
 
 const Signup = ({ navigation }) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -28,7 +36,7 @@ const Signup = ({ navigation }) => {
               color: COLORS.black,
             }}
           >
-            Create Account
+            Crear cuenta
           </Text>
 
           <Text
@@ -37,13 +45,13 @@ const Signup = ({ navigation }) => {
               color: COLORS.black,
             }}
           >
-            Your habits, your success!
+            ¡Tus habitos, tu exito!
           </Text>
         </View>
         <View style={{ marginBottom: 12 }}>
           <Text style={{ fontSize: 16, fontWeight: 400, marginVertical: 8 }}>
             {" "}
-            Email address
+            Dirección de correo electrónico
           </Text>
         </View>
         <View
@@ -59,8 +67,8 @@ const Signup = ({ navigation }) => {
           }}
         >
           <TextInput
-            placeholder="Enter your email address"
-            placeholderTextColor={COLORS.black}
+            placeholder="Ingresa tu correo electrónico"
+            placeholderTextColor={COLORS.grey}
             keyboardType="email-address"
             style={{ width: "100%" }}
           />
@@ -68,7 +76,7 @@ const Signup = ({ navigation }) => {
         <View style={{ marginBottom: 12 }}>
           <Text style={{ fontSize: 16, fontWeight: 400, marginVertical: 8 }}>
             {" "}
-            Mobile Number
+            Telefono
           </Text>
         </View>
         <View
@@ -97,8 +105,8 @@ const Signup = ({ navigation }) => {
           />
 
           <TextInput
-            placeholder="Enter your phone number"
-            placeholderTextColor={COLORS.black}
+            placeholder="Ingresa tu numero de telefono"
+            placeholderTextColor={COLORS.grey}
             keyboardType="numeric"
             style={{ width: "80%" }}
           />
@@ -111,7 +119,7 @@ const Signup = ({ navigation }) => {
               marginVertical: 8,
             }}
           >
-            Password
+            Contraseña
           </Text>
 
           <View
@@ -127,7 +135,7 @@ const Signup = ({ navigation }) => {
             }}
           >
             <TextInput
-              placeholder=" Enter your password"
+              placeholder="Ingresa tu contraseña"
               placeholderTextColor={COLORS.black}
               secureTextEntry={isPasswordShown}
               style={{ width: "100%" }}
@@ -159,11 +167,11 @@ const Signup = ({ navigation }) => {
             onValueChange={setIsChecked}
             color={isChecked ? COLORS.primary : undefined}
           />
-          <Text> I aggree to the terms and conditions</Text>
+          <Text> Aceptar los términos y condiciones.</Text>
         </View>
 
         <Button
-          title="Sign Up"
+          title="Registrarme"
           filled
           style={{
             marginBottom: 4,
@@ -186,7 +194,7 @@ const Signup = ({ navigation }) => {
               marginHorizontal: 10,
             }}
           />
-          <Text style={{ fontSize: 14 }}>Or Sign up with</Text>
+          <Text style={{ fontSize: 14 }}>O registrarme con</Text>
           <View
             style={{
               flex: 1,
@@ -263,7 +271,7 @@ const Signup = ({ navigation }) => {
         >
           <Text style={{ fontSize: 16, color: COLORS.black }}>
             {" "}
-            Already have an account?
+            ¿Ya tienes una cuenta?
           </Text>
           <Pressable onPress={() => navigation.navigate("Login")}>
             <Text
@@ -274,7 +282,7 @@ const Signup = ({ navigation }) => {
                 marginLeft: 6,
               }}
             >
-              Login
+              Iniciar sesión
             </Text>
           </Pressable>
         </View>

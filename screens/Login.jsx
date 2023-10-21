@@ -1,3 +1,9 @@
+/**
+ * Un componente de inicio de sesión para la aplicación.
+ * Uso:
+ * <Login navigation={navigation} />
+ */
+
 import {
   View,
   Text,
@@ -11,7 +17,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import COLORS from "./constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 import Checkbox from "expo-checkbox";
-import Button from "./components/Button";
+import Button from "../components/Button";
 
 const Login = ({ navigation }) => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -28,7 +34,7 @@ const Login = ({ navigation }) => {
               color: COLORS.black,
             }}
           >
-           Hey Welcome back !
+            ¡Hola, bienvenido de nuevo!
           </Text>
 
           <Text
@@ -37,13 +43,13 @@ const Login = ({ navigation }) => {
               color: COLORS.black,
             }}
           >
-            Good to see you! Let’s get back on track with your habits!
+            ¡Que bueno verte! ¡Volvamos a la normalidad con tus hábitos!
           </Text>
         </View>
         <View style={{ marginBottom: 12 }}>
           <Text style={{ fontSize: 16, fontWeight: 400, marginVertical: 8 }}>
             {" "}
-            Email address
+            Dirección de correo electrónico
           </Text>
         </View>
         <View
@@ -59,8 +65,9 @@ const Login = ({ navigation }) => {
           }}
         >
           <TextInput
-            placeholder="Enter your email address"
-            placeholderTextColor={COLORS.black}
+            placeholder="
+            Ingresa tu correo electrónico"
+            placeholderTextColor={COLORS.grey}
             keyboardType="email-address"
             style={{ width: "100%" }}
           />
@@ -74,7 +81,7 @@ const Login = ({ navigation }) => {
               marginVertical: 10,
             }}
           >
-            Password
+            Contraseña
           </Text>
 
           <View
@@ -90,8 +97,8 @@ const Login = ({ navigation }) => {
             }}
           >
             <TextInput
-              placeholder=" Enter your password"
-              placeholderTextColor={COLORS.black}
+              placeholder="Ingresa tu contraseña"
+              placeholderTextColor={COLORS.grey}
               secureTextEntry={isPasswordShown}
               style={{ width: "100%" }}
             />
@@ -122,11 +129,11 @@ const Login = ({ navigation }) => {
             onValueChange={setIsChecked}
             color={isChecked ? COLORS.primary : undefined}
           />
-          <Text> Remenber Me</Text>
+          <Text> Recuerdame</Text>
         </View>
 
         <Button
-          title="Login"
+          title="Iniciar sesión"
           filled
           style={{
             marginBottom: 4,
@@ -149,7 +156,7 @@ const Login = ({ navigation }) => {
               marginHorizontal: 10,
             }}
           />
-          <Text style={{ fontSize: 14 }}>Or Login with</Text>
+          <Text style={{ fontSize: 14 }}>O inicia sesión con</Text>
           <View
             style={{
               flex: 1,
@@ -226,7 +233,7 @@ const Login = ({ navigation }) => {
         >
           <Text style={{ fontSize: 16, color: COLORS.black }}>
             {" "}
-            Don't have an account?
+            ¿No tienes una cuenta?
           </Text>
           <Pressable onPress={() => navigation.navigate("Signup")}>
             <Text
@@ -237,7 +244,7 @@ const Login = ({ navigation }) => {
                 marginLeft: 6,
               }}
             >
-             Register
+              Registrate
             </Text>
           </Pressable>
         </View>
